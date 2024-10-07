@@ -1,0 +1,241 @@
+    1  sudo -i
+    2  hostnamectl set-hostname ansible
+    3  sudo -i
+    4  sudo -i
+    5  sudo -i
+    6  sudo -i
+    7  hostnamectl set-hostname dev-2
+    8  hostname
+    9  sudo -i
+   10  passwd root
+   11  vi /etc/ssh/sshd_config
+   12  systemctl restart sshd.service
+   13  systemctl status sshd.service
+   14  amazon-linextras install ansible2
+   15  amazon-linextras install ansible2 -y
+   16  amazon-linux-install ansible2 -y
+   17  yum install ansible2 -y
+   18  amazon-linextras-install ansible2 -y
+   19  mazon-linextras-install ansible2 -y
+   20  sudo yum install ansible -y
+   21  sudo yum update -y
+   22  sudo yum install ansible -y
+   23  sudo yum update -y
+   24  sudo amazon-linux-extras list | grep ansible
+   25  sudo amazon-linux-extras enable ansible2
+   26  sudo yum install ansible -y
+   27  ansible -v
+   28  ansible -version
+   29  ansible --version
+   30  sudo yum install ansible2 -y
+   31  sudo amazon-linux-extras install  ansible2
+   32  ansible --version
+   33  hostname
+   34  sudo -i
+   35  yum install python3
+   36  yum install pip3
+   37  yum install pip
+   38  yum install python-dlevel
+   39  python3
+   40  yum install python-dlevel
+   41  sudo yum install python3-devel -y
+   42  vi /etc/ansible/hosts
+   43  ssh-keygen
+   44  cat /etc/ansible/hosts
+   45  ssh-copy-id root@172.31.39.10
+   46  cat .ssh/id_rsa.pub
+   47  ssh 172.31.39.10
+   48  ssh root@172.31.39.10
+   49  cat /etc/ansible/hosts
+   50  ssh-copy-id root@172.31.37.97
+   51  ssh-copy-id root@172.31.44.184
+   52  ssh-copy-id root@172.31.33.154
+   53  ssh root@172.31.44.184
+   54  ansible all -a "yum install git -y"
+   55  git -v
+   56  git -version
+   57  git --version
+   58  ansible dev -a "yum install maven -y"
+   59  ansible test -a "yum install maven -y"
+   60  ansible all -a "touch file1"
+   61  ansible all -a "yum install apache -y"
+   62  ansible all -a "yum install httpd -y"
+   63  ansible all -a "systemctl start httpd"
+   64  ansible all -a "systemctl status httpd"
+   65  ansible all -a "mvn --version"
+   66  ansible all -a "useradd jahnavi"
+   67  ansible all -a "cat /etc/passwd"
+   68  ansible all --list-hosts
+   69  ansible dev --list-hosts
+   70  ansible test --list-hosts
+   71  ansible test[1] --list-hosts
+   72  ansible all[-1] --list-hosts
+   73  ansible all[0] --list-hosts
+   74  ansible all[0:2] --list-hosts
+   75  history
+   76  cat /etc/ansible/hosts
+   77  ansible all -a "yum install tree -y"
+   78  #ANSIBLE MODULES
+   79  #MODULES WORK ON KEY VALUE PAIRS
+   80  ansible all -a "yum remove git*" -y
+   81  ansible all -a "yum remove git" -y
+   82  ansible all -a "yum remove git* -y"
+   83  ansible all -m yum -a "name=git state=present"
+   84  python --version
+   85  ansible all -m yum -a "name=git state=present"
+   86  ansible all -m dnf -a "name=git state=present"
+   87  git --version
+   88  git -v
+   89  ansible all -m yum -a "name=httpd state=present"
+   90  ansible all -m dnf -a "name=httpd state=present"
+   91  ansible all -m dnf -a "name=httpd state=absent"
+   92  ansible all -m dnf -a "name=httpd state=present"
+   93  ansible all -m dnf -a "name=httpd state=latest"
+   94  ansible all -m dnf -a "name=docker state=present"
+   95  ansible all -m dnf -a "name=docker state=latest"
+   96  ansible all -m service -a "name=httpd state=started"
+   97  ansible all -a "systemctl status httpd"
+   98  ansible all -m service -a "name=httpd state=stopped"
+   99  ansible all -a "systemctl status httpd"
+  100  ansible all -m service -a "name=httpd state=started"
+  101  ansible all -m user -a "name=jahnavi state=present"
+  102  vi app.yml
+  103  ansible all -m copy -a "src=app.yml dest=/tmp"
+  104  ansible all -a "ls"
+  105  ansible all -a "ls /tmp"
+  106  #by default ansible checks in the root folder for the files
+  107  ansible all -m copy "src=app.yml dest=/root"
+  108  ansible all -m copy -a  "src=app.yml dest=/root"
+  109  ansible all -a "ls /root"
+  110  ansible all -a "ls"
+  111  #Playbook : we can execute multiple modules using playbook at the same time
+  112  #we can reuse playbooks
+  113  #playbook will be written on yaml language
+  114  #yaml:yet another markup language
+  115  yaml starts with --- and end with ...
+  116  #yaml starts with --- and end with ...
+  117  vi playbook1.yml
+  118  ansible all -a "yum remove httpd"
+  119  ansible all -a "yum remove httpd -y"
+  120  ansible-playbook playbook1.yml
+  121  vi playbook1.yml
+  122  ansible-playbook playbook1.yml
+  123  vi playbook1.yml
+  124  ansible-playbook playbook1.yml
+  125  vi playbook1.yml
+  126  cat /etc/os-release
+  127  ansible-playbook playbook1.yml
+  128  cat playbook1.yml
+  129  vi playbook2.yml
+  130  ansible-playbook playbook2.yml
+  131  vi playbook2.yml
+  132  ansible-playbook playbook2.yml
+  133  vi playbook2.yml
+  134  ansible-playbook playbook2.yml
+  135  vi playbook2.yml
+  136  ansible-playbook playbook2.yml
+  137  vi playbook2.yml
+  138  cat playbook2.yml
+  139  vi playbook2.yml
+  140  vi playbook3.yml
+  141  ansible-playbook playbook3.yml
+  142  vi playbook3.yml
+  143  ansible-playbook playbook3.yml
+  144  cat playbook3.yml
+  145  vi playbook3.yml
+  146  ansible-playbook playbook3.yml --tags b c
+  147  ansible-playbook playbook3.yml --tags bc
+  148  ansible-playbook playbook3.yml --tags b
+  149  ansible-playbook playbook3.yml --tags a,c
+  150  vi playbook3.yml
+  151  cat playbook3.yml
+  152  ansible-playbook playbook3.yml --skip-tags a,c
+  153  hostname
+  154  cd playbook
+  155  vi playbook4.yml
+  156  ansible all -a "yum remove git* maven -y"
+  157  ansible-playbook playbook4.yml
+  158  sed -i 's/install/remove/g' playbook4.yml
+  159  ansible-playbook playbook4.yml
+  160  ansible all -a "git--version"
+  161  ansible all -a "git --version"
+  162  ansible all -a "git -v"
+  163  ansible all -a "maven -v"
+  164  ansible all -a "maven -version"
+  165  ansible all -a "mvn -version"
+  166  mvn --version
+  167  gi --version
+  168  git --version
+  169  git -v
+  170  cat playbook4.yml
+  171  cat playbook5.yml
+  172  vi playbook5.yml
+  173  ansible-playbook playbook5.yml
+  174  cat playbook5.yml
+  175  vi playbook5.yml
+  176  ansible-playbook playbook5.yml
+  177  vi playbook5.yml
+  178  ansible-playbook playbook5.yml
+  179  ansible all -a "git --version"
+  180  ansible all -a "mvn --version"
+  181  ansible all -a "docker --version"
+  182  sed -i s/git/git*/g playbook5.yml
+  183  cat playbook5.yml
+  184  vi  playbook5.yml
+  185  cat  playbook5.yml
+  186  ansible-playbook playbook5.yml
+  187  sed -i s/absent/present/g playbook5.yml
+  188  sed -i s/git*/git/g playbook5.yml
+  189* ansible-playbook playbook5.yml --extra-vars "d=tree, "
+  190  cat playbook5.yml
+  191  ansible all -a "yum remove git*, maven, tree* docker -y"
+  192  vi playbook5.yml
+  193  ansible-playbook playbook5.yml --extra-vars "d=tree, e=java-1.8.0-openjdk"
+  194  ansible-playbook playbook5.yml --extra-vars "d=tree  e=java-1.8.0-openjdk"
+  195  cat playbook5.yml
+  196  #LOOPS
+  197* sed -i s/present/absent/g playbook5.yml"
+  198  cat playbook5.yml
+  199  vi loops.yml
+  200  ansible-playbook playbook5.yml
+  201  ansible-playbook playbook5.yml --extra-vars "d=tree, e=java-1.8.0-openjdk"
+  202  ansible all -a "docker --version"
+  203  cay loops.yml
+  204  cat loops.yml
+  205  ansible-playbook loops.yml
+  206  ansible all -a "git --version"
+  207  ansible all -a "mvn --version"
+  208  ansible all -a "mvn -v"
+  209  ansible all -a "docker -v"
+  210  ansible all -a "httpd -v"
+  211  ansible all -a "tree -v"
+  212  sed -i 's/git/git*/g' loops.yml
+  213  sed -i 's/present/absent/g' loops.yml
+  214  cat loops.yml
+  215  ansible-playbook loops.yml
+  216  vi user.yml
+  217  ansible-playbook user.yml
+  218  vi user.yml
+  219  ansible-playbook user.yml
+  220  sed -i 's/present/absent/g' user.yml
+  221  cat user.yml
+  222  ansible-playbook user.yml
+  223  #TROUBLESHOOTING TECHNIQUES
+  224  cd.ssh
+  225  cd .ssh
+  226  cat known_hosts
+  227  ansible all --list-hosts
+  228  cat /etc/ansible/hosts
+  229  vi /etc/ansible/hosts
+  230  ansible all --list-hosts
+  231  cat /etc/ansible/hosts
+  232  vi /etc/ansible/hosts
+  233  ansible all --list-hosts
+  234  #known hosts is the correct way to check the connected nodes
+  235  cat known_hosts
+  236  cd
+  237  ansible all -m setup
+  238  ansible all -m setup | grep cpu
+  239  ansible all -m setup | grep mem
+  240  ansible all -m setup | grep -i mem
+  241  history
