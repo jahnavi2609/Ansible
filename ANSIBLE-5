@@ -1,0 +1,1314 @@
+[ec2-user@ansible ~]$ cat /etc/ansible/hosts
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+# Ex 1: Ungrouped hosts, specify before any group headers.
+
+## green.example.com
+## blue.example.com
+## 192.168.100.1
+## 192.168.100.10
+
+# Ex 2: A collection of hosts belonging to the 'webservers' group
+
+## [webservers]
+## alpha.example.org
+## beta.example.org
+## 192.168.1.100
+## 192.168.1.110
+
+# If you have multiple hosts following a pattern you can specify
+# them like this:
+
+## www[001:006].example.com
+
+# Ex 3: A collection of database servers in the 'dbservers' group
+
+## [dbservers]
+##
+## db01.intranet.mydomain.net
+## db02.intranet.mydomain.net
+## 10.25.1.56
+## 10.25.1.57
+
+# Here's another example of host ranges, this time there are no
+# leading 0s:
+
+## db-[99:101]-node.example.com
+[test]
+172.31.39.10
+172.31.37.97
+
+[dev]
+172.31.44.184
+172.31.33.154
+
+[prod]
+13.51.196.1
+[ec2-user@ansible ~]$
+[ec2-user@ansible ~]$
+[ec2-user@ansible ~]$
+[ec2-user@ansible ~]$
+[ec2-user@ansible ~]$
+[ec2-user@ansible ~]$
+[ec2-user@ansible ~]$
+[ec2-user@ansible ~]$
+[ec2-user@ansible ~]$
+[ec2-user@ansible ~]$
+[ec2-user@ansible ~]$
+[ec2-user@ansible ~]$ sudo -i
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# cat /proc/c
+cgroups   cmdline   consoles  cpuinfo   crypto
+[root@ansible ~]# cat /proc/cpuinfo
+processor       : 0
+vendor_id       : GenuineIntel
+cpu family      : 6
+model           : 85
+model name      : Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz
+stepping        : 7
+microcode       : 0x5003707
+cpu MHz         : 2500.004
+cache size      : 36608 KB
+physical id     : 0
+siblings        : 2
+core id         : 0
+cpu cores       : 1
+apicid          : 0
+initial apicid  : 0
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single pti fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves ida arat pku ospke
+bugs            : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit mmio_stale_data retbleed gds
+bogomips        : 5000.00
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 46 bits physical, 48 bits virtual
+power management:
+
+processor       : 1
+vendor_id       : GenuineIntel
+cpu family      : 6
+model           : 85
+model name      : Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz
+stepping        : 7
+microcode       : 0x5003707
+cpu MHz         : 2500.004
+cache size      : 36608 KB
+physical id     : 0
+siblings        : 2
+core id         : 0
+cpu cores       : 1
+apicid          : 1
+initial apicid  : 1
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single pti fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves ida arat pku ospke
+bugs            : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit mmio_stale_data retbleed gds
+bogomips        : 5000.00
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 46 bits physical, 48 bits virtual
+power management:
+
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# vi info.yml
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# ansible-
+ansible-2             ansible-console       ansible-doc-2         ansible-galaxy-2.7    ansible-playbook-2.7  ansible-test
+ansible-2.7           ansible-console-2     ansible-doc-2.7       ansible-inventory     ansible-pull          ansible-vault
+ansible-config        ansible-console-2.7   ansible-galaxy        ansible-playbook      ansible-pull-2        ansible-vault-2
+ansible-connection    ansible-doc           ansible-galaxy-2      ansible-playbook-2    ansible-pull-2.7      ansible-vault-2.7
+[root@ansible ~]# ansible-playbook info.yml
+
+PLAY [all] ******************************************************************************************************************************
+
+TASK [Gathering Facts] ******************************************************************************************************************
+[WARNING]: Platform linux on host 172.31.33.154 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.33.154]
+[WARNING]: Platform linux on host 172.31.44.184 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.44.184]
+[WARNING]: Platform linux on host 172.31.37.97 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.37.97]
+[WARNING]: Platform linux on host 172.31.39.10 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.39.10]
+fatal: [13.51.196.1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 13.51.196.1 port 22: Connection timed out", "unreachable": true}
+
+TASK [to print msgs] ********************************************************************************************************************
+ok: [172.31.39.10] => {
+    "msg": "the node name oa: test-1, total mem:904, free mem is: 532, toto cpus is:  2"
+}
+ok: [172.31.37.97] => {
+    "msg": "the node name oa: test-2, total mem:904, free mem is: 515, toto cpus is:  2"
+}
+ok: [172.31.44.184] => {
+    "msg": "the node name oa: dev-2, total mem:904, free mem is: 510, toto cpus is:  2"
+}
+ok: [172.31.33.154] => {
+    "msg": "the node name oa: dev-1, total mem:904, free mem is: 525, toto cpus is:  2"
+}
+
+PLAY RECAP ******************************************************************************************************************************
+13.51.196.1                : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0
+172.31.33.154              : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+172.31.37.97               : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+172.31.39.10               : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+172.31.44.184              : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# cat info.yml
+- hosts: all
+  tasks:
+    - name: to print msgs
+      debug:
+       msg: "the node name oa: {{ansible_hostname}}, total mem:{{ansible_memtotal_mb}}, free mem is: {{ansible_memfree_mb}}, toto cpus is:  {{ansible_processor_vcpus}}"
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# hostname -i
+fe80::8b8:46ff:fe15:c14f%eth0 172.31.39.210
+[root@ansible ~]# #JINJA TEMPLATE : used to get the customized op, here its a text file which can extract the variables and these values will chnage as per time.
+[root@ansible ~]#
+[root@ansible ~]# #LOOKUPS: this module used to get data from files, db and key values
+[root@ansible ~]#
+[root@ansible ~]# vi creds.txt
+[root@ansible ~]# vi playbook_c.yml
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# ansible-playbook playbook_c.yml
+ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: No JSON object could be decoded
+
+Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to be in '/root/playbook_c.yml': line 3, column 19, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  vars:
+    a: '{{lookup('file', '/root/creds.txt')}}"
+                  ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+[root@ansible ~]# pwd
+/root
+[root@ansible ~]# cat creds.txt
+user=raham
+client=swiggy
+[root@ansible ~]#
+[root@ansible ~]# vi playbook_c.yml
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# ansible-playbook playbook_c.yml
+
+PLAY [dev] ******************************************************************************************************************************
+
+TASK [Gathering Facts] ******************************************************************************************************************
+[WARNING]: Platform linux on host 172.31.33.154 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.33.154]
+[WARNING]: Platform linux on host 172.31.44.184 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.44.184]
+
+TASK [debug] ****************************************************************************************************************************
+ok: [172.31.44.184] => {
+    "msg": "hi my username is user=raham\nclient=swiggy"
+}
+ok: [172.31.33.154] => {
+    "msg": "hi my username is user=raham\nclient=swiggy"
+}
+
+PLAY RECAP ******************************************************************************************************************************
+172.31.33.154              : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+172.31.44.184              : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# #lookup we do't use mostly in real times
+[root@ansible ~]#
+[root@ansible ~]# #======================================================
+[root@ansible ~]# #ANSIBLE STRATEGIES
+[root@ansible ~]# #==========================================================
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# #it is way of working with ansible-playbooks
+[root@ansible ~]#
+[root@ansible ~]# #LINEAR
+[root@ansible ~]# #FREE
+[root@ansible ~]# #ROLLING
+[root@ansible ~]# #SEQUENCE
+[root@ansible ~]# #BATCH
+[root@ansible ~]#
+[root@ansible ~]# #we dont chosse by default ansible runs with linear and free strategies
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# vi playbook_c1.yml
+
+[1]+  Stopped                 vi playbook_c1.yml
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# cp playbook_c.yml playbook_c1.yml
+[root@ansible ~]#
+[root@ansible ~]# vi playbook_c1.yml
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# ansible-playbook playbook_c1.yml
+
+PLAY [dev] ******************************************************************************************************************************
+
+TASK [debug] ****************************************************************************************************************************
+ok: [172.31.44.184] => {
+    "msg": "hi my username is user=raham\nclient=swiggy"
+}
+ok: [172.31.33.154] => {
+    "msg": "hi my username is user=raham\nclient=swiggy"
+}
+
+PLAY RECAP ******************************************************************************************************************************
+172.31.33.154              : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+172.31.44.184              : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+[root@ansible ~]# cat playbook_c1.yml
+- hosts: dev
+  gather_facts: false
+  strategy: free
+  vars:
+    a: "{{lookup('file', '/root/creds.txt')}}"
+  tasks:
+    - debug:
+        msg: "hi my username is {{a}}"
+
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# #===========================================
+[root@ansible ~]# #LAMPSTACK
+[root@ansible ~]# #============================================
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# #LINUX #APACHE #MYSQL #PHP/PYTHON
+[root@ansible ~]#
+[root@ansible ~]# vi playbook_c2.yml
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# ansible-playbook playbook_c2.yml
+ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: No JSON object could be decoded
+
+Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to be in '/root/playbook_c2.yml': line 2, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+- hosts: all
+  - tasks:
+  ^ here
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# vi playbook_c2.yml
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# ansible-playbook playbook_c2.yml
+
+PLAY [all] ******************************************************************************************************************************
+
+TASK [Gathering Facts] ******************************************************************************************************************
+[WARNING]: Platform linux on host 172.31.33.154 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.33.154]
+[WARNING]: Platform linux on host 172.31.44.184 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.44.184]
+[WARNING]: Platform linux on host 172.31.37.97 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.37.97]
+[WARNING]: Platform linux on host 172.31.39.10 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.39.10]
+fatal: [13.51.196.1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 13.51.196.1 port 22: Connection timed out", "unreachable": true}
+
+TASK [installing apache] ****************************************************************************************************************
+changed: [172.31.44.184]
+changed: [172.31.33.154]
+changed: [172.31.37.97]
+changed: [172.31.39.10]
+
+TASK [installing mysql] *****************************************************************************************************************
+fatal: [172.31.44.184]: FAILED! => {"changed": false, "failures": ["No package mysql available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+fatal: [172.31.37.97]: FAILED! => {"changed": false, "failures": ["No package mysql available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+fatal: [172.31.39.10]: FAILED! => {"changed": false, "failures": ["No package mysql available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+fatal: [172.31.33.154]: FAILED! => {"changed": false, "failures": ["No package mysql available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+
+PLAY RECAP ******************************************************************************************************************************
+13.51.196.1                : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0
+172.31.33.154              : ok=2    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+172.31.37.97               : ok=2    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+172.31.39.10               : ok=2    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+172.31.44.184              : ok=2    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# cat playbook_c2.yml
+- hosts: all
+  tasks:
+     - name : installing apache
+       dnf: name=httpd state=present
+
+     - name : installing mysql
+       dnf: name=mysql state=present
+
+     - name : installing python
+       dnf: name=python state=present
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# vi playbook_c2.yml
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# ansible-playbook playbook_c2.yml
+
+PLAY [all] ******************************************************************************************************************************
+
+TASK [Gathering Facts] ******************************************************************************************************************
+[WARNING]: Platform linux on host 172.31.33.154 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.33.154]
+[WARNING]: Platform linux on host 172.31.37.97 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.37.97]
+[WARNING]: Platform linux on host 172.31.44.184 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.44.184]
+[WARNING]: Platform linux on host 172.31.39.10 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.39.10]
+fatal: [13.51.196.1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 13.51.196.1 port 22: Connection timed out", "unreachable": true}
+
+TASK [installing apache] ****************************************************************************************************************
+ok: [172.31.33.154]
+ok: [172.31.37.97]
+ok: [172.31.39.10]
+ok: [172.31.44.184]
+
+TASK [installing mysql] *****************************************************************************************************************
+fatal: [172.31.33.154]: FAILED! => {"changed": false, "msg": "The Python 2 yum module is needed for this module. If you require Python 3 support use the `dnf` Ansible module instead."}
+fatal: [172.31.37.97]: FAILED! => {"changed": false, "msg": "The Python 2 yum module is needed for this module. If you require Python 3 support use the `dnf` Ansible module instead."}
+fatal: [172.31.44.184]: FAILED! => {"changed": false, "msg": "The Python 2 yum module is needed for this module. If you require Python 3 support use the `dnf` Ansible module instead."}
+fatal: [172.31.39.10]: FAILED! => {"changed": false, "msg": "The Python 2 yum module is needed for this module. If you require Python 3 support use the `dnf` Ansible module instead."}
+
+PLAY RECAP ******************************************************************************************************************************
+13.51.196.1                : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0
+172.31.33.154              : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+172.31.37.97               : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+172.31.39.10               : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+172.31.44.184              : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+
+[root@ansible ~]#
+[root@ansible ~]# vi playbook_c2.yml
+
+[2]+  Stopped                 vi playbook_c2.yml
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# vi playbook_c2.yml
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# ansible-playbook playbook_c2.yml
+
+
+PLAY [all] ******************************************************************************************************************************
+
+TASK [Gathering Facts] ******************************************************************************************************************
+[WARNING]: Platform linux on host 172.31.44.184 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.44.184]
+[WARNING]: Platform linux on host 172.31.37.97 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.37.97]
+[WARNING]: Platform linux on host 172.31.33.154 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.33.154]
+[WARNING]: Platform linux on host 172.31.39.10 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.39.10]
+fatal: [13.51.196.1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 13.51.196.1 port 22: Connection timed out", "unreachable": true}
+
+TASK [installing apache] ****************************************************************************************************************
+ok: [172.31.33.154]
+ok: [172.31.44.184]
+ok: [172.31.37.97]
+ok: [172.31.39.10]
+
+TASK [installing mysql] *****************************************************************************************************************
+fatal: [172.31.33.154]: FAILED! => {"changed": false, "failures": ["No package mysql available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+fatal: [172.31.37.97]: FAILED! => {"changed": false, "failures": ["No package mysql available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+fatal: [172.31.44.184]: FAILED! => {"changed": false, "failures": ["No package mysql available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+fatal: [172.31.39.10]: FAILED! => {"changed": false, "failures": ["No package mysql available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+
+PLAY RECAP ******************************************************************************************************************************
+13.51.196.1                : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0
+172.31.33.154              : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+172.31.37.97               : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+172.31.39.10               : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+172.31.44.184              : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+
+[root@ansible ~]#
+[root@ansible ~]# ^C
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# vi playbook_c2.yml
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# ansible-playbook playbook_c2.yml
+
+PLAY [all] ******************************************************************************************************************************
+
+TASK [Gathering Facts] ******************************************************************************************************************
+[WARNING]: Platform linux on host 172.31.44.184 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.44.184]
+[WARNING]: Platform linux on host 172.31.33.154 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.33.154]
+[WARNING]: Platform linux on host 172.31.37.97 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.37.97]
+[WARNING]: Platform linux on host 172.31.39.10 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.39.10]
+fatal: [13.51.196.1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 13.51.196.1 port 22: Connection timed out", "unreachable": true}
+
+TASK [installing apache] ****************************************************************************************************************
+ok: [172.31.39.10]
+ok: [172.31.33.154]
+ok: [172.31.44.184]
+ok: [172.31.37.97]
+
+TASK [installing mysql] *****************************************************************************************************************
+fatal: [172.31.39.10]: FAILED! => {"changed": false, "failures": ["No package mysql-server available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+fatal: [172.31.33.154]: FAILED! => {"changed": false, "failures": ["No package mysql-server available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+fatal: [172.31.44.184]: FAILED! => {"changed": false, "failures": ["No package mysql-server available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+fatal: [172.31.37.97]: FAILED! => {"changed": false, "failures": ["No package mysql-server available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+
+PLAY RECAP ******************************************************************************************************************************
+13.51.196.1                : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0
+172.31.33.154              : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+172.31.37.97               : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+172.31.39.10               : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+172.31.44.184              : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# vi netflix.yml
+
+[3]+  Stopped                 vi netflix.yml
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# vi netflix.yml
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# ansible-playbook netflix.yml
+
+PLAY [test] *****************************************************************************************************************************
+
+TASK [Gathering Facts] ******************************************************************************************************************
+[WARNING]: Platform linux on host 172.31.37.97 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.37.97]
+[WARNING]: Platform linux on host 172.31.39.10 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.39.10]
+
+TASK [installing apache server] *********************************************************************************************************
+fatal: [172.31.39.10]: FAILED! => {"changed": false, "msg": "The Python 2 yum module is needed for this module. If you require Python 3 support use the `dnf` Ansible module instead."}
+fatal: [172.31.37.97]: FAILED! => {"changed": false, "msg": "The Python 2 yum module is needed for this module. If you require Python 3 support use the `dnf` Ansible module instead."}
+
+PLAY RECAP ******************************************************************************************************************************
+172.31.37.97               : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+172.31.39.10               : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# sed -i s/yum/dnf/g ^C
+[root@ansible ~]#
+[root@ansible ~]# sed -i s/yum/dnf/g netflix.yml
+[root@ansible ~]#
+[root@ansible ~]# vi netflix.yml
+
+[4]+  Stopped                 vi netflix.yml
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# ansible-playbook netflix.yml
+
+PLAY [test] *****************************************************************************************************************************
+
+TASK [Gathering Facts] ******************************************************************************************************************
+[WARNING]: Platform linux on host 172.31.37.97 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.37.97]
+[WARNING]: Platform linux on host 172.31.39.10 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.39.10]
+
+TASK [installing apache server] *********************************************************************************************************
+ok: [172.31.37.97]
+ok: [172.31.39.10]
+
+TASK [activating apache server] *********************************************************************************************************
+changed: [172.31.37.97]
+changed: [172.31.39.10]
+
+TASK [installing git] *******************************************************************************************************************
+changed: [172.31.37.97]
+changed: [172.31.39.10]
+
+TASK [git checkout] *********************************************************************************************************************
+changed: [172.31.39.10]
+changed: [172.31.37.97]
+
+PLAY RECAP ******************************************************************************************************************************
+172.31.37.97               : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+172.31.39.10               : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# cat netflix.yml
+- hosts: test
+  tasks:
+    - name: installing apache server
+      dnf: name=httpd state=present
+
+    - name: activating apache server
+      service: name=httpd state=started
+
+    - name: installing git
+      dnf: name=git state=present
+
+    - name: git checkout
+      git:
+        repo: "https://github.com/CleverProgrammers/pwj-netflix-clone.git"
+        dest: "/var/www/html"
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# cat /etc/an
+anacrontab  ansible/
+[root@ansible ~]# cat /etc/ansible/hosts
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+# Ex 1: Ungrouped hosts, specify before any group headers.
+
+## green.example.com
+## blue.example.com
+## 192.168.100.1
+## 192.168.100.10
+
+# Ex 2: A collection of hosts belonging to the 'webservers' group
+
+## [webservers]
+## alpha.example.org
+## beta.example.org
+## 192.168.1.100
+## 192.168.1.110
+
+# If you have multiple hosts following a pattern you can specify
+# them like this:
+
+## www[001:006].example.com
+
+# Ex 3: A collection of database servers in the 'dbservers' group
+
+## [dbservers]
+##
+## db01.intranet.mydomain.net
+## db02.intranet.mydomain.net
+## 10.25.1.56
+## 10.25.1.57
+
+# Here's another example of host ranges, this time there are no
+# leading 0s:
+
+## db-[99:101]-node.example.com
+[test]
+172.31.39.10
+172.31.37.97
+
+[dev]
+172.31.44.184
+172.31.33.154
+
+[prod]
+13.51.196.1
+[root@ansible ~]#
+[root@ansible ~]# ^C
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# ansible-playbook netflix.yml
+
+PLAY [test] *****************************************************************************************************************************
+
+TASK [Gathering Facts] ******************************************************************************************************************
+[WARNING]: Platform linux on host 172.31.37.97 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.37.97]
+[WARNING]: Platform linux on host 172.31.39.10 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.39.10]
+
+TASK [installing apache server] *********************************************************************************************************
+ok: [172.31.37.97]
+ok: [172.31.39.10]
+
+TASK [activating apache server] *********************************************************************************************************
+ok: [172.31.37.97]
+ok: [172.31.39.10]
+
+TASK [installing git] *******************************************************************************************************************
+ok: [172.31.39.10]
+ok: [172.31.37.97]
+
+TASK [git checkout] *********************************************************************************************************************
+ok: [172.31.37.97]
+ok: [172.31.39.10]
+
+PLAY RECAP ******************************************************************************************************************************
+172.31.37.97               : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+172.31.39.10               : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# cat netflix.yml
+- hosts: test
+  tasks:
+    - name: installing apache server
+      dnf: name=httpd state=present
+
+    - name: activating apache server
+      service: name=httpd state=started
+
+    - name: installing git
+      dnf: name=git state=present
+
+    - name: git checkout
+      git:
+        repo: "https://github.com/CleverProgrammers/pwj-netflix-clone.git"
+        dest: "/var/www/html"
+[root@ansible ~]#
+[root@ansible ~]# ^C
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# ansible-playbook netflix.yml
+
+PLAY [test] *****************************************************************************************************************************
+
+TASK [Gathering Facts] ******************************************************************************************************************
+[WARNING]: Platform linux on host 172.31.37.97 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.37.97]
+[WARNING]: Platform linux on host 172.31.39.10 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.39.10]
+
+TASK [installing apache server] *********************************************************************************************************
+ok: [172.31.39.10]
+ok: [172.31.37.97]
+
+TASK [activating apache server] *********************************************************************************************************
+ok: [172.31.39.10]
+ok: [172.31.37.97]
+
+TASK [installing git] *******************************************************************************************************************
+ok: [172.31.39.10]
+ok: [172.31.37.97]
+
+TASK [git checkout] *********************************************************************************************************************
+ok: [172.31.37.97]
+ok: [172.31.39.10]
+
+PLAY RECAP ******************************************************************************************************************************
+172.31.37.97               : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+172.31.39.10               : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# ansible-playbook -i <inventory_file> netflix.yml
+-bash: inventory_file: No such file or directory
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# ansible-playbook -i /etc/ansible/hosts netflix.yml
+
+PLAY [test] *****************************************************************************************************************************
+
+TASK [Gathering Facts] ******************************************************************************************************************
+[WARNING]: Platform linux on host 172.31.37.97 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.37.97]
+[WARNING]: Platform linux on host 172.31.39.10 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [172.31.39.10]
+
+TASK [installing apache server] *********************************************************************************************************
+ok: [172.31.39.10]
+ok: [172.31.37.97]
+
+TASK [activating apache server] *********************************************************************************************************
+ok: [172.31.37.97]
+ok: [172.31.39.10]
+
+TASK [installing git] *******************************************************************************************************************
+ok: [172.31.39.10]
+ok: [172.31.37.97]
+
+TASK [git checkout] *********************************************************************************************************************
+ok: [172.31.39.10]
+ok: [172.31.37.97]
+
+PLAY RECAP ******************************************************************************************************************************
+172.31.37.97               : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+172.31.39.10               : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# dnf clean all
+-bash: dnf: command not found
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# cat /etc/ansible/hosts
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+# Ex 1: Ungrouped hosts, specify before any group headers.
+
+## green.example.com
+## blue.example.com
+## 192.168.100.1
+## 192.168.100.10
+
+# Ex 2: A collection of hosts belonging to the 'webservers' group
+
+## [webservers]
+## alpha.example.org
+## beta.example.org
+## 192.168.1.100
+## 192.168.1.110
+
+# If you have multiple hosts following a pattern you can specify
+# them like this:
+
+## www[001:006].example.com
+
+# Ex 3: A collection of database servers in the 'dbservers' group
+
+## [dbservers]
+##
+## db01.intranet.mydomain.net
+## db02.intranet.mydomain.net
+## 10.25.1.56
+## 10.25.1.57
+
+# Here's another example of host ranges, this time there are no
+# leading 0s:
+
+## db-[99:101]-node.example.com
+[test]
+172.31.39.10
+172.31.37.97
+
+[dev]
+172.31.44.184
+172.31.33.154
+
+[prod]
+13.51.196.1
+[root@ansible ~]# vi /etc/ansible/hosts
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# ansible-playbook netflix.yml
+
+PLAY [test] *****************************************************************************************************************************
+
+TASK [Gathering Facts] ******************************************************************************************************************
+The authenticity of host '16.171.206.225 (16.171.206.225)' can't be established.
+ECDSA key fingerprint is SHA256:XQp8A7kqRJ2WClmew/EHmP4XEhJi516PTYjpwupROVE.
+ECDSA key fingerprint is MD5:17:5b:74:b5:2d:de:7c:f3:a2:59:af:36:44:ff:4b:82.
+Are you sure you want to continue connecting (yes/no)? yes
+[WARNING]: Platform linux on host 16.171.206.225 is using the discovered Python interpreter at /usr/bin/python3, but future installation
+of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [16.171.206.225]
+
+TASK [installing apache server] *********************************************************************************************************
+ok: [16.171.206.225]
+
+TASK [activating apache server] *********************************************************************************************************
+ok: [16.171.206.225]
+
+TASK [installing git] *******************************************************************************************************************
+ok: [16.171.206.225]
+
+TASK [git checkout] *********************************************************************************************************************
+ok: [16.171.206.225]
+
+PLAY RECAP ******************************************************************************************************************************
+16.171.206.225             : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]#
+[root@ansible ~]# ^C
+[root@ansible ~]# history
+    1  sudo -i
+    2  hostnamectl set-hostname ansible
+    3  sudo -i
+    4  sudo -i
+    5  sudo -i
+    6  sudo -i
+    7  hostnamectl set-hostname dev-2
+    8  hostname
+    9  sudo -i
+   10  passwd root
+   11  vi /etc/ssh/sshd_config
+   12  systemctl restart sshd.service
+   13  systemctl status sshd.service
+   14  amazon-linextras install ansible2
+   15  amazon-linextras install ansible2 -y
+   16  amazon-linux-install ansible2 -y
+   17  yum install ansible2 -y
+   18  amazon-linextras-install ansible2 -y
+   19  mazon-linextras-install ansible2 -y
+   20  sudo yum install ansible -y
+   21  sudo yum update -y
+   22  sudo yum install ansible -y
+   23  sudo yum update -y
+   24  sudo amazon-linux-extras list | grep ansible
+   25  sudo amazon-linux-extras enable ansible2
+   26  sudo yum install ansible -y
+   27  ansible -v
+   28  ansible -version
+   29  ansible --version
+   30  sudo yum install ansible2 -y
+   31  sudo amazon-linux-extras install  ansible2
+   32  ansible --version
+   33  hostname
+   34  sudo -i
+   35  yum install python3
+   36  yum install pip3
+   37  yum install pip
+   38  yum install python-dlevel
+   39  python3
+   40  yum install python-dlevel
+   41  sudo yum install python3-devel -y
+   42  vi /etc/ansible/hosts
+   43  ssh-keygen
+   44  cat /etc/ansible/hosts
+   45  ssh-copy-id root@172.31.39.10
+   46  cat .ssh/id_rsa.pub
+   47  ssh 172.31.39.10
+   48  ssh root@172.31.39.10
+   49  cat /etc/ansible/hosts
+   50  ssh-copy-id root@172.31.37.97
+   51  ssh-copy-id root@172.31.44.184
+   52  ssh-copy-id root@172.31.33.154
+   53  ssh root@172.31.44.184
+   54  ansible all -a "yum install git -y"
+   55  git -v
+   56  git -version
+   57  git --version
+   58  ansible dev -a "yum install maven -y"
+   59  ansible test -a "yum install maven -y"
+   60  ansible all -a "touch file1"
+   61  ansible all -a "yum install apache -y"
+   62  ansible all -a "yum install httpd -y"
+   63  ansible all -a "systemctl start httpd"
+   64  ansible all -a "systemctl status httpd"
+   65  ansible all -a "mvn --version"
+   66  ansible all -a "useradd jahnavi"
+   67  ansible all -a "cat /etc/passwd"
+   68  ansible all --list-hosts
+   69  ansible dev --list-hosts
+   70  ansible test --list-hosts
+   71  ansible test[1] --list-hosts
+   72  ansible all[-1] --list-hosts
+   73  ansible all[0] --list-hosts
+   74  ansible all[0:2] --list-hosts
+   75  history
+   76  cat /etc/ansible/hosts
+   77  ansible all -a "yum install tree -y"
+   78  #ANSIBLE MODULES
+   79  #MODULES WORK ON KEY VALUE PAIRS
+   80  ansible all -a "yum remove git*" -y
+   81  ansible all -a "yum remove git" -y
+   82  ansible all -a "yum remove git* -y"
+   83  ansible all -m yum -a "name=git state=present"
+   84  python --version
+   85  ansible all -m yum -a "name=git state=present"
+   86  ansible all -m dnf -a "name=git state=present"
+   87  git --version
+   88  git -v
+   89  ansible all -m yum -a "name=httpd state=present"
+   90  ansible all -m dnf -a "name=httpd state=present"
+   91  ansible all -m dnf -a "name=httpd state=absent"
+   92  ansible all -m dnf -a "name=httpd state=present"
+   93  ansible all -m dnf -a "name=httpd state=latest"
+   94  ansible all -m dnf -a "name=docker state=present"
+   95  ansible all -m dnf -a "name=docker state=latest"
+   96  ansible all -m service -a "name=httpd state=started"
+   97  ansible all -a "systemctl status httpd"
+   98  ansible all -m service -a "name=httpd state=stopped"
+   99  ansible all -a "systemctl status httpd"
+  100  ansible all -m service -a "name=httpd state=started"
+  101  ansible all -m user -a "name=jahnavi state=present"
+  102  vi app.yml
+  103  ansible all -m copy -a "src=app.yml dest=/tmp"
+  104  ansible all -a "ls"
+  105  ansible all -a "ls /tmp"
+  106  #by default ansible checks in the root folder for the files
+  107  ansible all -m copy "src=app.yml dest=/root"
+  108  ansible all -m copy -a  "src=app.yml dest=/root"
+  109  ansible all -a "ls /root"
+  110  ansible all -a "ls"
+  111  #Playbook : we can execute multiple modules using playbook at the same time
+  112  #we can reuse playbooks
+  113  #playbook will be written on yaml language
+  114  #yaml:yet another markup language
+  115  yaml starts with --- and end with ...
+  116  #yaml starts with --- and end with ...
+  117  vi playbook1.yml
+  118  ansible all -a "yum remove httpd"
+  119  ansible all -a "yum remove httpd -y"
+  120  ansible-playbook playbook1.yml
+  121  vi playbook1.yml
+  122  ansible-playbook playbook1.yml
+  123  vi playbook1.yml
+  124  ansible-playbook playbook1.yml
+  125  vi playbook1.yml
+  126  cat /etc/os-release
+  127  ansible-playbook playbook1.yml
+  128  cat playbook1.yml
+  129  vi playbook2.yml
+  130  ansible-playbook playbook2.yml
+  131  vi playbook2.yml
+  132  ansible-playbook playbook2.yml
+  133  vi playbook2.yml
+  134  ansible-playbook playbook2.yml
+  135  vi playbook2.yml
+  136  ansible-playbook playbook2.yml
+  137  vi playbook2.yml
+  138  cat playbook2.yml
+  139  vi playbook2.yml
+  140  vi playbook3.yml
+  141  ansible-playbook playbook3.yml
+  142  vi playbook3.yml
+  143  ansible-playbook playbook3.yml
+  144  cat playbook3.yml
+  145  vi playbook3.yml
+  146  ansible-playbook playbook3.yml --tags b c
+  147  ansible-playbook playbook3.yml --tags bc
+  148  ansible-playbook playbook3.yml --tags b
+  149  ansible-playbook playbook3.yml --tags a,c
+  150  vi playbook3.yml
+  151  cat playbook3.yml
+  152  ansible-playbook playbook3.yml --skip-tags a,c
+  153  hostname
+  154  hostname
+  155  cd playbook
+  156  vi playbook4.yml
+  157  ansible all -a "yum remove git* maven -y"
+  158  ansible-playbook playbook4.yml
+  159  sed -i 's/install/remove/g' playbook4.yml
+  160  ansible-playbook playbook4.yml
+  161  ansible all -a "git--version"
+  162  ansible all -a "git --version"
+  163  ansible all -a "git -v"
+  164  ansible all -a "maven -v"
+  165  ansible all -a "maven -version"
+  166  ansible all -a "mvn -version"
+  167  mvn --version
+  168  gi --version
+  169  git --version
+  170  git -v
+  171  cat playbook4.yml
+  172  cat playbook5.yml
+  173  vi playbook5.yml
+  174  ansible-playbook playbook5.yml
+  175  cat playbook5.yml
+  176  vi playbook5.yml
+  177  ansible-playbook playbook5.yml
+  178  vi playbook5.yml
+  179  ansible-playbook playbook5.yml
+  180  ansible all -a "git --version"
+  181  ansible all -a "mvn --version"
+  182  ansible all -a "docker --version"
+  183  sed -i s/git/git*/g playbook5.yml
+  184  cat playbook5.yml
+  185  vi  playbook5.yml
+  186  cat  playbook5.yml
+  187  ansible-playbook playbook5.yml
+  188  sed -i s/absent/present/g playbook5.yml
+  189  sed -i s/git*/git/g playbook5.yml
+  190  ansible-playbook playbook5.yml --extra-vars "d=tree, "
+  191  cat playbook5.yml
+  192  ansible all -a "yum remove git*, maven, tree* docker -y"
+  193  vi playbook5.yml
+  194  ansible-playbook playbook5.yml --extra-vars "d=tree, e=java-1.8.0-openjdk"
+  195  ansible-playbook playbook5.yml --extra-vars "d=tree  e=java-1.8.0-openjdk"
+  196  cat playbook5.yml
+  197  #LOOPS
+  198  sed -i s/present/absent/g playbook5.yml"
+  199  cat playbook5.yml
+  200  vi loops.yml
+  201  ansible-playbook playbook5.yml
+  202  ansible-playbook playbook5.yml --extra-vars "d=tree, e=java-1.8.0-openjdk"
+  203  ansible all -a "docker --version"
+  204  cay loops.yml
+  205  cat loops.yml
+  206  ansible-playbook loops.yml
+  207  ansible all -a "git --version"
+  208  ansible all -a "mvn --version"
+  209  ansible all -a "mvn -v"
+  210  ansible all -a "docker -v"
+  211  ansible all -a "httpd -v"
+  212  ansible all -a "tree -v"
+  213  sed -i 's/git/git*/g' loops.yml
+  214  sed -i 's/present/absent/g' loops.yml
+  215  cat loops.yml
+  216  ansible-playbook loops.yml
+  217  vi user.yml
+  218  ansible-playbook user.yml
+  219  vi user.yml
+  220  ansible-playbook user.yml
+  221  sed -i 's/present/absent/g' user.yml
+  222  cat user.yml
+  223  ansible-playbook user.yml
+  224  #TROUBLESHOOTING TECHNIQUES
+  225  cd.ssh
+  226  cd .ssh
+  227  cat known_hosts
+  228  ansible all --list-hosts
+  229  cat /etc/ansible/hosts
+  230  vi /etc/ansible/hosts
+  231  ansible all --list-hosts
+  232  cat /etc/ansible/hosts
+  233  vi /etc/ansible/hosts
+  234  ansible all --list-hosts
+  235  #known hosts is the correct way to check the connected nodes
+  236  cat known_hosts
+  237  cd
+  238  ansible all -m setup
+  239  ansible all -m setup | grep cpu
+  240  ansible all -m setup | grep mem
+  241  ansible all -m setup | grep -i mem
+  242  history
+  243  hostname
+  244  #CONDITIONS ----IMPORTANT
+  245  ansible all -m setup| grep os_family
+  246  vi playbook8.yml
+  247  ansible-playbook playbook8.yml
+  248  vi playbook8.yml
+  249  ansible-playbook playbook8.yml
+  250  sed -i "s/present/absent/g" playbook8.yml
+  251  ansible-playbook playbook8.yml
+  252  cat playbook8.yml
+  253  vi playbook9.
+  254  vi playbook9.yml
+  255  ansible-playbook playbook9.yml
+  256  vi playbook9.yml
+  257  ansible-playbook playbook9.yml
+  258  vi playbook9.yml
+  259  ansible-playbook playbook9.yml
+  260  #HANDLERS
+  261  vi playbook8.yml
+  262  vi playbook9.yml
+  263  vi playbook10.yml
+  264  ansible-playbook playbook10.yml
+  265  sed -i 's/present/absent/g' playbook10.yml
+  266  cat playbook10.yml
+  267  cat playbook9.yml
+  268  cat playbook8.yml
+  269  ansible-playbook playbook10.yml
+  270  history
+  271  cat /proc/cpuinfo
+  272  vi info.yml
+  273  ansible-playbook info.yml
+  274  cat info.yml
+  275  hostname -i
+  276  #JINJA TEMPLATE : used to get the customized op, here its a text file which can extract the variables and these values will chnage as per time.
+  277  #LOOKUPS: this module used to get data from files, db and key values
+  278  vi creds.txt
+  279  vi playbook_c.yml
+  280  ansible-playbook playbook_c.yml
+  281  pwd
+  282  cat creds.txt
+  283  vi playbook_c.yml
+  284  ansible-playbook playbook_c.yml
+  285  #lookup we do't use mostly in real times
+  286  #======================================================
+  287  #ANSIBLE STRATEGIES
+  288  #==========================================================
+  289  #it is way of working with ansible-playbooks
+  290  #LINEAR
+  291  #FREE
+  292  #ROLLING
+  293  #SEQUENCE
+  294  #BATCH
+  295  #we dont chosse by default ansible runs with linear and free strategies
+  296  vi playbook_c1.yml
+  297  cp playbook_c.yml playbook_c1.yml
+  298  vi playbook_c1.yml
+  299  ansible-playbook playbook_c1.yml
+  300  cat playbook_c1.yml
+  301  #===========================================
+  302  #LAMPSTACK
+  303  #============================================
+  304  #LINUX #APACHE #MYSQL #PHP/PYTHON
+  305  vi playbook_c2.yml
+  306  ansible-playbook playbook_c2.yml
+  307  vi playbook_c2.yml
+  308  ansible-playbook playbook_c2.yml
+  309  cat playbook_c2.yml
+  310  vi playbook_c2.yml
+  311  ansible-playbook playbook_c2.yml
+  312  vi playbook_c2.yml
+  313  ansible-playbook playbook_c2.yml
+  314  vi playbook_c2.yml
+  315  ansible-playbook playbook_c2.yml
+  316  vi netflix.yml
+  317  ansible-playbook netflix.yml
+  318  sed -i s/yum/dnf/g netflix.yml
+  319  vi netflix.yml
+  320  ansible-playbook netflix.yml
+  321  cat netflix.yml
+  322  cat /etc/ansible/hosts
+  323  ansible-playbook netflix.yml
+  324  cat netflix.yml
+  325  ansible-playbook netflix.yml
+  326  ansible-playbook -i <inventory_file> netflix.yml
+  327  ansible-playbook -i /etc/ansible/hosts netflix.yml
+  328  dnf clean all
+  329  cat /etc/ansible/hosts
+  330  vi /etc/ansible/hosts
+  331  ansible-playbook netflix.yml
+  332  history
